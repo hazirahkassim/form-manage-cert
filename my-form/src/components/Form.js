@@ -82,13 +82,14 @@ const StyledListbox = styled('ul')(
   `,
 );
 
+
 const StyledOption = styled(OptionUnstyled)(
   ({ theme }) => `
   list-style: none;
   padding: 8px;
   border-radius: 0.45em;
   cursor: default;
-
+  color: blue;
   &:last-of-type {
     border-bottom: none;
   }
@@ -136,9 +137,7 @@ const CustomSelect = React.forwardRef(function CustomSelect(props, ref) {
 
 
 export default function Form(){    
- 
 
-  
     return (
         <>
         <div className = "mainForm">
@@ -157,7 +156,7 @@ export default function Form(){
                     </div>
                     <div className="subInfo2DD">
 
-                    <CustomSelect defaultValue={12}>
+                    <CustomSelect>
                     <StyledOption value={1}>1 Months</StyledOption>
                     <StyledOption value={2}>2 Month</StyledOption>
                     <StyledOption value={3}>3 Month</StyledOption>
@@ -197,7 +196,7 @@ export default function Form(){
                     </div>
                     <div className="subInfo2DD">
                    
-                   <CustomSelect defaultValue={2}>
+                   <CustomSelect>
                     <StyledOption value={1}>Add to Principal</StyledOption>
                     <StyledOption value={2}>Credit to Account</StyledOption>
                     </CustomSelect>
@@ -210,7 +209,7 @@ export default function Form(){
                         Instruction on Maturity
                     </div>
                     <div className="subInfo2DD">
-                    <CustomSelect defaultValue={2}>
+                    <CustomSelect>
                     <StyledOption value={1}>Auto Renewal</StyledOption>
                     <StyledOption value={2}>Credit to Account</StyledOption>
                     </CustomSelect>
@@ -223,11 +222,38 @@ export default function Form(){
                     </div>
                     <div className="subInfo2DD">
 
-                    <CustomSelect defaultValue={4}>
-                    <StyledOption value={1}>SME First Account</StyledOption>
+                    <CustomSelect >
+                    <div className="acc1">
+                      <StyledOption value={1}><div className="account">SME First Account 
+                      <div className="noacc"> 3101 2130 6725</div>
+                      <div className="amount">RM 690,420.00</div></div>
+                      </StyledOption>
+                      </div>
+                    
+                      <div className="acc1">
+                      <StyledOption value={2}><div className="account">SME First Account 
+                      <div className="noacc"> 3101 2130 6725</div>
+                      <div className="amount">RM 690,420.00</div></div>
+                      </StyledOption>
+                      </div>
+
+                      <div className="acc1">
+                      <StyledOption value={3}><div className="account">SME First Account 
+                      <div className="noacc"> 3101 2130 6725</div>
+                      <div className="amount">RM 690,420.00</div></div>
+                      </StyledOption>
+                      </div>
+
+                      <div className="acc1">
+                      <StyledOption value={4}><div className="account">SME First Account 
+                      <div className="noacc"> 3101 2130 6725</div>
+                      <div className="amount">RM 690,420.00</div></div>
+                      </StyledOption>
+                      </div>
+{/*                     
                     <StyledOption value={2}>Payment Account</StyledOption>
                     <StyledOption value={3}>Payment Account 2</StyledOption>
-                    <StyledOption value={4}>Payment Account 3</StyledOption>
+                    <StyledOption value={4}>Payment Account 3</StyledOption> */}
                     </CustomSelect>
 
                     </div>
@@ -237,7 +263,7 @@ export default function Form(){
                         Profit Payment Frequency
                     </div>
                     <div className="subInfo2DD">
-                    <CustomSelect defaultValue={3}>
+                    <CustomSelect>
                     <StyledOption value={1}>Monthly</StyledOption>
                     <StyledOption value={2}>On Maturity</StyledOption>
                     <StyledOption value={3}>6 Months</StyledOption>
