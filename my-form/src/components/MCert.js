@@ -7,12 +7,30 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '463px',
+  bgcolor: '#FFFFFF',
+  border: '2px solid #000',
+  boxShadow: 24,
+  borderRadius:'20px',
+  p: 4,
+  
+};
 
 export default function MCert(){    
     const handleChange = (event) => {
    
     };
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     return ( 
     <Box
@@ -23,19 +41,40 @@ export default function MCert(){
         noValidate
         autoComplete="off"
     >
-    <div className="MainForm">
+    <div className="mainForm">
 
         <div className="Info">
             <div className="Title">
-                Principal Amount
+              Principal Ammount
             </div>
         <div className="subTitle">
+        <Button onClick={handleOpen}>
         <TextField
           disabled
           id="filled-disabled"
           defaultValue="RM100,000.00"
           variant="filled"
-        />
+        /></Button>
+        <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2" >
+            Change the principal amount?
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Stack spacing={2} direction="row">
+
+        <Button variant="contained" className="yes">Yes</Button>
+        <Button variant="outlined" className="Cancel">Cancel</Button>
+
+</Stack>
+          </Typography>
+        </Box>
+      </Modal>
         </div>
         </div>
 
